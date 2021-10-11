@@ -1,6 +1,6 @@
 import { useVote } from "../context/VoteContext";
 import "../App.css";
-import { Bar, PolarArea } from "react-chartjs-2";
+import {  PolarArea } from "react-chartjs-2";
 
 function Chart() {
   const { voteData } = useVote();

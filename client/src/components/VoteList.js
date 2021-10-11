@@ -12,9 +12,11 @@ function VoteList() {
     if (!answer) {
       return false;
     }
+
     setVote((preview) => ({ ...preview, [answer]: preview[answer] + 1 }));
     sendVote("new-vote", answer);
   };
+
   return (
     <div>
       <div
@@ -45,12 +47,12 @@ function VoteList() {
               <label className="l-radio">
                 <input
                   type="radio"
-                  value="brakingbad"
-                  name="brakingbad"
-                  checked={answer === "brakingbad"}
+                  value="bright"
+                  name="bright"
+                  checked={answer === "bright"}
                   readOnly
                 />
-                <span>Breaking Bad</span>
+                <span>Bright</span>
               </label>
             </div>
           </div>
@@ -81,12 +83,12 @@ function VoteList() {
               <label className="l-radio">
                 <input
                   type="radio"
-                  value="dexter"
-                  name="dexter"
-                  checked={answer === "dexter"}
+                  value="tombRaider"
+                  name="tombRaider"
+                  checked={answer === "tombRaider"}
                   readOnly
                 />
-                <span>Dexter</span>
+                <span>Tomb Raider</span>
               </label>
             </div>
           </div>
@@ -118,12 +120,12 @@ function VoteList() {
               <label className="l-radio">
                 <input
                   type="radio"
-                  value="hmym"
-                  name="hmym"
-                  checked={answer === "hmym"}
+                  value="blackPanther"
+                  name="blackPanther"
+                  checked={answer === "blackPanther"}
                   readOnly
                 />
-                <span>How I Met Your Mother</span>
+                <span>Black Panther</span>
               </label>
             </div>
           </div>
@@ -136,77 +138,35 @@ function VoteList() {
             <div className="movie_header">
               <img
                 className="locandina"
-                src="https://movieplayer.net-cdn.it/t/images/2017/12/20/bright_jpg_191x283_crop_q85.jpg"
+                src="https://www.indyturk.com/sites/default/files/styles/800xauto/public/thumbnails/image/2020/04/13/339586-2113337681.jpg?itok=l3ZMw9-3"
               />
-              <h1>Bright</h1>
-              <h4>2017, David Ayer</h4>
-              <span className="minutes">117 min</span>
-              <p className="type">Action, Crime, Fantasy</p>
+              <h1>The Platform</h1>
+              <h4>2019, Galder Gaztelu-Urrutia</h4>
+              <span className="minutes">94 min</span>
+              <p className="type">Thriller/Sci-Fi</p>
             </div>
             <div className="movie_desc">
               <p className="text">
-                Set in a world where fantasy creatures live side by side with
-                humans. A human cop is forced to work with an Orc to find a
-                weapon everyone is prepared to kill for.
+                A vertical prison with one cell per level. Two people per cell.
+                Only one food platform and two minutes per day to feed. An
+                endless nightmare trapped in The Hole.
               </p>
             </div>
             <div className="movie_social">
               <label className="l-radio">
                 <input
                   type="radio"
-                  value="bbt"
-                  name="bbt"
-                  checked={answer === "bbt"}
+                  value="thePlatform"
+                  name="thePlatform"
+                  checked={answer === "thePlatform"}
                   readOnly
                 />
-                <span>The Big Bang Theory</span>
+                <span>The Platform</span>
               </label>
             </div>
           </div>
-          <div className="blur_back bright_back"></div>
+          <div className="blur_back platform_back"></div>
         </div>
-        {/* card 4 end */}
-        {/* tetz */}
-        {/* <input
-          type="radio"
-          value="brakingbad"
-          name="brakingbad"
-          checked={answer === "brakingbad"}
-          readOnly
-        />
-        Breaking Bad */}
-        {/* <input
-          type="radio"
-          value="dexter"
-          name="dexter"
-          checked={answer === "dexter"}
-          readOnly
-        />
-        Dexter */}
-        {/* <input
-          type="radio"
-          value="hmym"
-          name="hmym"
-          checked={answer === "hmym"}
-          readOnly
-        />
-        How I met your mother */}
-        {/* <input
-          type="radio"
-          value="bbt"
-          name="bbt"
-          checked={answer === "bbt"}
-          readOnly
-        />
-        The Big Bang Theory */}
-        {/* <input
-          type="radio"
-          value="ahs"
-          name="ahs"
-          checked={answer === "ahs"}
-          readOnly
-        />{" "}
-        American Horror Story */}
       </div>
       <div className="vote-options1">
         <button onClick={handleSubmit} className="vote-button1">

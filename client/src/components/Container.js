@@ -11,10 +11,13 @@ function Container() {
 
   useEffect(() => {
     connectSocket();
-
     subscribeToNewVotes((vote) => {
-      console.log(vote);
-      setVote((preview) => ({ ...preview, [vote]: preview[vote] + 1 }));
+      Object.keys(vote).forEach((key) => {
+        setVote((preview) => ({
+          ...preview,
+          [key]: vote[key],
+        }));
+      });
     });
   }, [setVote]);
 

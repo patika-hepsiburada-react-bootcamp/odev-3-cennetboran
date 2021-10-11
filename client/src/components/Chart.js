@@ -6,13 +6,15 @@ function Chart() {
   const { voteData } = useVote();
 
   return (
-    <div style={{ width: "70%" }}>
-      <div style={{ width: "70%" }}>
+    <div className="chart-container">
+      <div style={{ width: "50%" }}>
         <PolarArea
           data={voteData}
           options={{
             responsive: true,
             title: { text: "Favorite Film", display: true },
+            backgroundColor: "rgba(176 27 27 / 10%)",
+            borderColor: "#fff",
           }}
         />
       </div>

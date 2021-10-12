@@ -2,7 +2,7 @@ import { io } from "socket.io-client";
 
 let socket;
 export const connectSocket = () => {
-  socket = io("http://localhost:3000", {
+  socket = io("https://vast-lake-82456.herokuapp.com/", {
     transports: ["websocket"],
   });
 

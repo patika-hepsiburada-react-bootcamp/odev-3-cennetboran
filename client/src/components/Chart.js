@@ -1,3 +1,7 @@
+/* 
+  Display votes in chart
+*/
+
 import { useVote } from "../context/VoteContext";
 import "../App.css";
 import {  PolarArea } from "react-chartjs-2";

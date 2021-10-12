@@ -1,19 +1,21 @@
 import { createContext, useState, useEffect, useContext } from "react";
 
 const VoteContext = createContext();
-
+// define initial variables for votes
 const INITIALVOTES = {
-  bright: 0,
-  tombRaider: 0,
   blackPanther: 0,
+  bright: 0,
   thePlatform: 0,
-  ahs: 0,
+  tombRaider: 0,
 };
 
 export const VoteProvider = ({ children }) => {
-  const [vote, setVote] = useState(INITIALVOTES);
+  const [vote, setVote] = useState(
+    INITIALVOTES
+  );
+  //set initial total vote
   const [totalVote, setTotalVote] = useState(0);
-
+  //set initial chart data for votes
   const [voteData, setVoteData] = useState({
     labels: ["Bright", "Tomb Raider", "Black Panther", "The Platform"],
     datasets: [
@@ -24,7 +26,6 @@ export const VoteProvider = ({ children }) => {
           totalVote > 0 ? (vote.tombRaider / totalVote) * 100 : 0,
           totalVote > 0 ? (vote.blackPanther / totalVote) * 100 : 0,
           totalVote > 0 ? (vote.thePlatform / totalVote) * 100 : 0,
-          totalVote > 0 ? (vote.ahs / totalVote) * 100 : 0,
         ],
         backgroundColor: [
           "rgba(255, 99, 132, 0.5)",
@@ -38,21 +39,15 @@ export const VoteProvider = ({ children }) => {
     ],
   });
 
+  //on every vote, update data
   useEffect(() => {
+    //set total vote
     setTotalVote(
-      vote.bright +
-        vote.tombRaider +
-        vote.blackPanther +
-        vote.thePlatform +
-        vote.ahs
+      vote.bright + vote.tombRaider +vote.blackPanther +vote.thePlatform
     );
 
-    let _totalVote =
-      vote.bright +
-      vote.tombRaider +
-      vote.blackPanther +
-      vote.thePlatform +
-      vote.ahs;
+    let _totalVote = vote.bright + vote.tombRaider + vote.blackPanther + vote.thePlatform;
+    //set voteData for chart
     setVoteData((preview) => ({
       ...preview,
       datasets: [
@@ -64,7 +59,6 @@ export const VoteProvider = ({ children }) => {
             _totalVote > 0 ? (vote.tombRaider / _totalVote) * 100 : 0,
             _totalVote > 0 ? (vote.blackPanther / _totalVote) * 100 : 0,
             _totalVote > 0 ? (vote.thePlatform / _totalVote) * 100 : 0,
-            _totalVote > 0 ? (vote.ahs / _totalVote) * 100 : 0,
           ],
         },
       ],

@@ -10,14 +10,11 @@ function Container() {
   const { setVote } = useVote();
 
   useEffect(() => {
+    //connect to backend socket
     connectSocket();
+    //get data when votes updated
     subscribeToNewVotes((vote) => {
-      Object.keys(vote).forEach((key) => {
-        setVote((preview) => ({
-          ...preview,
-          [key]: vote[key],
-        }));
-      });
+      setVote(vote);
     });
   }, [setVote]);
 

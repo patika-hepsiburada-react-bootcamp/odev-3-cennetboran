@@ -1,5 +1,5 @@
 # Movie survey app
-[Demo](https://odev-3-cennetboranreact.vercel.app/)
+[Demo](https://adoring-hermann-376b97.netlify.app/)
 
 #Gereksinimler
 

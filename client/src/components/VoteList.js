@@ -1,10 +1,14 @@
+/* 
+  For displaying which film to vote and send to backend
+*/
+
 import { useState } from "react";
 import { useVote } from "../context/VoteContext";
 import "../App.css";
 import { sendVote } from "../SocketApi";
 function VoteList() {
   const [answer, setAnswer] = useState("");
-  const { setVote } = useVote();
+  const { setVote,vote } = useVote();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,11 +16,11 @@ function VoteList() {
     if (!answer) {
       return false;
     }
-
-    setVote((preview) => ({ ...preview, [answer]: preview[answer] + 1 }));
+    //on new vote event, make requet to socket
     sendVote("new-vote", answer);
+    //set votes
+    setVote({...vote});
   };
-
   return (
     <div>
       <div
@@ -28,6 +32,7 @@ function VoteList() {
           <div className="info_section">
             <div className="movie_header">
               <img
+              alt="..."
                 className="locandina"
                 src="https://movieplayer.net-cdn.it/t/images/2017/12/20/bright_jpg_191x283_crop_q85.jpg"
               />
@@ -64,6 +69,7 @@ function VoteList() {
           <div className="info_section">
             <div className="movie_header">
               <img
+              alt="..."
                 className="locandina"
                 src="https://mr.comingsoon.it/imgdb/locandine/235x336/53750.jpg"
               />
@@ -100,6 +106,7 @@ function VoteList() {
           <div className="info_section">
             <div className="movie_header">
               <img
+              alt="..."
                 className="locandina"
                 src="https://mr.comingsoon.it/imgdb/locandine/235x336/53715.jpg"
               />
@@ -137,6 +144,7 @@ function VoteList() {
           <div className="info_section">
             <div className="movie_header">
               <img
+                alt="..."
                 className="locandina"
                 src="https://www.indyturk.com/sites/default/files/styles/800xauto/public/thumbnails/image/2020/04/13/339586-2113337681.jpg?itok=l3ZMw9-3"
               />

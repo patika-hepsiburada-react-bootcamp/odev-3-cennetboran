@@ -3,7 +3,7 @@ import React from "react";
 function Questions() {
   return (
     <div className="question">
-      <h1>What is your favorite film?</h1>
+      <h1>What is your favorite movie?</h1>
     </div>
   );
 }

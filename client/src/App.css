@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+.question {
+  text-align: center;
+}
+
+.question h1 {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 8px;
+  color: #1a1a1a;
+  text-shadow: 0 0 5px #ff913e, 0 0 10px #000, 0 0 20px #6eb1d3f2,
+    0 0 40px #07ff48, 0 0 80px #fb330d, 0 0 90px #e53d12, 0 0 100px #0ff,
+    0 0 150px #0ff;
+}
+
 .l-radio {
   padding: 6px;
   border-radius: 50px;
